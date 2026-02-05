@@ -225,24 +225,24 @@ h1{
   display: block;
 }
 
-/* Swipe animation keyframes - current slides left, next comes from right */
+/* Swipe animation keyframes - faster transitions, 2 seconds per image */
 @keyframes carouselSwipe {
   0% { 
     transform: translateX(100%); 
     z-index: 1;
     opacity: 0;
   }
-  1% { 
+  2% { 
     transform: translateX(0); 
     z-index: 2;
     opacity: 1;
   }
-  19% { 
+  38% { 
     transform: translateX(0); 
     z-index: 2;
     opacity: 1;
   }
-  20% { 
+  40% { 
     transform: translateX(-100%); 
     z-index: 1;
     opacity: 0;
@@ -255,24 +255,24 @@ h1{
 }
 
 .carousel-slide:nth-child(1) {
-  animation: carouselSwipe 25s infinite;
+  animation: carouselSwipe 10s infinite;
   animation-delay: 0s;
 }
 .carousel-slide:nth-child(2) {
-  animation: carouselSwipe 25s infinite;
-  animation-delay: 5s;
+  animation: carouselSwipe 10s infinite;
+  animation-delay: 2s;
 }
 .carousel-slide:nth-child(3) {
-  animation: carouselSwipe 25s infinite;
-  animation-delay: 10s;
+  animation: carouselSwipe 10s infinite;
+  animation-delay: 4s;
 }
 .carousel-slide:nth-child(4) {
-  animation: carouselSwipe 25s infinite;
-  animation-delay: 15s;
+  animation: carouselSwipe 10s infinite;
+  animation-delay: 6s;
 }
 .carousel-slide:nth-child(5) {
-  animation: carouselSwipe 25s infinite;
-  animation-delay: 20s;
+  animation: carouselSwipe 10s infinite;
+  animation-delay: 8s;
 }
 .mock-img{
   height: 180px;
@@ -366,42 +366,99 @@ h1{
 .card p{ margin: 0; color: var(--muted); line-height: 1.55; font-size: 14px; }
 
 .steps{ 
-  display:flex; 
-  flex-direction: column;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px; 
-  margin-top: 14px; 
+  margin-top: 20px; 
 }
+
 .step{
   display:flex; 
-  gap: 14px; 
+  flex-direction: column;
+  gap: 12px; 
   align-items:flex-start;
   border-radius: var(--r);
-  background: rgba(139, 92, 246, 0.08);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(139, 92, 246, 0.15);
-  padding: 18px;
+  padding: 24px;
   transition: all 200ms ease;
+  aspect-ratio: 1;
+  justify-content: flex-start;
 }
-.step:hover{
+
+.step:nth-child(1){
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+.step:nth-child(1):hover{
   background: rgba(139, 92, 246, 0.12);
   border-color: rgba(139, 92, 246, 0.25);
-  transform: translateX(4px);
 }
+
+.step:nth-child(2){
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+}
+.step:nth-child(2):hover{
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.25);
+}
+
+.step:nth-child(3){
+  background: rgba(168, 85, 247, 0.08);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+}
+.step:nth-child(3):hover{
+  background: rgba(168, 85, 247, 0.12);
+  border-color: rgba(168, 85, 247, 0.25);
+}
+
+.step:hover{
+  transform: translateY(-4px);
+}
+
 .step-num{
-  width: 40px; 
-  height: 40px;
-  border-radius: 12px;
+  width: 48px; 
+  height: 48px;
+  border-radius: 14px;
   display:grid; 
   place-items:center;
-  background: rgba(139, 92, 246, 0.2);
-  border: 1px solid rgba(139, 92, 246, 0.3);
   font-weight: 900;
+  font-size: 20px;
   color: rgba(255,255,255,0.95);
   flex-shrink: 0;
+  margin-bottom: 4px;
 }
-.step h3{ margin:0 0 6px; font-size: 18px; font-weight: 800; }
-.step p{ margin:0; color: var(--muted); line-height: 1.55; font-size: 15px; }
+
+.step:nth-child(1) .step-num{
+  background: rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.step:nth-child(2) .step-num{
+  background: rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.step:nth-child(3) .step-num{
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.step h3{ 
+  margin:0 0 8px; 
+  font-size: 20px; 
+  font-weight: 800; 
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.step p{ 
+  margin:0; 
+  color: var(--muted); 
+  line-height: 1.5; 
+  font-size: 14px; 
+}
 
 .callout{
   margin-top: 16px;
@@ -484,6 +541,12 @@ h1{
   }
   .phone-screen{
     border-radius: 43px;
+  }
+  .steps{
+    grid-template-columns: 1fr;
+  }
+  .step{
+    aspect-ratio: auto;
   }
 }
 

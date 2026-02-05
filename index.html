@@ -11,8 +11,8 @@
   <meta property="og:url" content="https://styleit.ai" />
   <meta property="og:image" content="https://styleit.ai/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" type="image/png" href="/icon.png" />
-  <link rel="apple-touch-icon" href="/icon.png" />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="apple-touch-icon" href="icon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -20,7 +20,7 @@
   <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="/">
-        <img src="/icon.png" alt="Stylit" class="brand-icon" />
+        <img src="icon.png" alt="Stylit" class="brand-icon" />
         <span class="brand-name">Stylit</span>
       </a>
 
@@ -79,28 +79,10 @@
           <div class="phone">
             <div class="phone-top">
               <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-              <span class="mini">Stylit Preview</span>
+              <span class="mini">Stylit App</span>
             </div>
-
             <div class="screen">
-              <div class="mock-img">
-                <div class="mock-badge">Try-On</div>
-                <div class="mock-pill">Upload screenshot</div>
-              </div>
-
-              <div class="mock-actions">
-                <div class="chip">✨ Try On</div>
-                <div class="chip">💬 Ask Pod</div>
-                <div class="chip">🪄 AI</div>
-                <div class="chip">🔔 Track Price</div>
-              </div>
-
-              <div class="mock-card">
-                <div class="mock-title">AI says:</div>
-                <div class="mock-text">"This fit flatters your shape. Try warmer tones + size M in this brand."</div>
-              </div>
-
-              <div class="mock-foot">Built for Gen-Z shopping decisions.</div>
+              <img src="screenshots/tryon.PNG" alt="Try-On Feature" class="app-screenshot" />
             </div>
           </div>
         </div>
@@ -116,27 +98,39 @@
 
         <div class="grid">
           <div class="card">
+            <div class="card-image">
+              <img src="screenshots/tryon.PNG" alt="Try-On Feature" loading="lazy" />
+            </div>
             <div class="icon">✨</div>
             <h3>Try-On from screenshot</h3>
             <p>Upload a screenshot of any outfit. Stylit extracts the item and generates a try-on on your body photo.</p>
           </div>
 
           <div class="card">
+            <div class="card-image">
+              <img src="screenshots/pods.PNG" alt="Pods Feature" loading="lazy" />
+            </div>
             <div class="icon">💬</div>
             <h3>Ask a Pod</h3>
             <p>Get votes fast. Friends Pod for private feedback, Style Twins for taste-matched votes, Global Mix for broad signal.</p>
           </div>
 
           <div class="card">
+            <div class="card-image">
+              <img src="screenshots/fitcheck.PNG" alt="AI Insights" loading="lazy" />
+            </div>
             <div class="icon">🪄</div>
             <h3>AI Insights</h3>
             <p>Instant guidance: "Does this suit me?", skin tone & vibe match, and size recommendations using your profile + product info.</p>
           </div>
 
           <div class="card">
+            <div class="card-image">
+              <img src="screenshots/pod_verdict.PNG" alt="Pod Verdict" loading="lazy" />
+            </div>
             <div class="icon">🔔</div>
-            <h3>Track Price Drops</h3>
-            <p>Save items you like and get notified when the price drops — so Gen-Z can buy at the right time.</p>
+            <h3>Pod Verdict</h3>
+            <p>See real-time voting results with confidence scores. Get instant feedback from your Pod before buying.</p>
           </div>
 
           <div class="card">
@@ -160,24 +154,39 @@
 
         <div class="steps">
           <div class="step">
-            <div class="step-num">1</div>
-            <div>
-              <h3>Upload the product</h3>
-              <p>Upload a screenshot of any outfit you saw on TikTok / Instagram / Amazon / Macy's / anywhere.</p>
+            <div class="step-image">
+              <img src="screenshots/tryon.PNG" alt="Step 1: Upload screenshot" loading="lazy" />
+            </div>
+            <div class="step-content">
+              <div class="step-num">1</div>
+              <div>
+                <h3>Upload the product</h3>
+                <p>Upload a screenshot of any outfit you saw on TikTok / Instagram / Amazon / Macy's / anywhere.</p>
+              </div>
             </div>
           </div>
           <div class="step">
-            <div class="step-num">2</div>
-            <div>
-              <h3>Pick your decision layer</h3>
-              <p>Try-On, Ask Pod, or AI — or combine all 3 for confidence before buying.</p>
+            <div class="step-image">
+              <img src="screenshots/pods.PNG" alt="Step 2: Ask Pod" loading="lazy" />
+            </div>
+            <div class="step-content">
+              <div class="step-num">2</div>
+              <div>
+                <h3>Pick your decision layer</h3>
+                <p>Try-On, Ask Pod, or AI — or combine all 3 for confidence before buying.</p>
+              </div>
             </div>
           </div>
           <div class="step">
-            <div class="step-num">3</div>
-            <div>
-              <h3>Buy smarter</h3>
-              <p>Use votes + insights + price tracking to reduce regret purchases and build your style identity.</p>
+            <div class="step-image">
+              <img src="screenshots/pod_verdict.PNG" alt="Step 3: Get results" loading="lazy" />
+            </div>
+            <div class="step-content">
+              <div class="step-num">3</div>
+              <div>
+                <h3>Buy smarter</h3>
+                <p>Use votes + insights + price tracking to reduce regret purchases and build your style identity.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -234,7 +243,7 @@
     <div class="container footer-inner">
       <div class="foot-left">
         <div class="foot-brand">Stylit</div>
-        <div class="foot-sub">AI + Pods decision layer for shopping.</div>
+        <div class="foot-sub">AI + pods decision layer for shopping.</div>
       </div>
 
       <div class="foot-links">

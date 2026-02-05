@@ -169,7 +169,7 @@ h1{
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  max-width: 320px;
+  max-width: 390px;
   margin: 0 auto;
 }
 
@@ -181,33 +181,26 @@ h1{
   max-height: 85vh;
   background: #1a1a1a;
   border-radius: 55px;
-  padding: 6px;
+  padding: 3px;
   box-shadow: 
-    0 0 0 3px rgba(255,255,255,0.08),
-    0 30px 80px rgba(0,0,0,0.9),
-    inset 0 0 0 1px rgba(255,255,255,0.03);
+    0 0 0 1px rgba(255,255,255,0.1),
+    0 30px 80px rgba(0,0,0,0.9);
   flex-shrink: 0;
 }
 
 .phone-screen{
   width: 100%;
   height: 100%;
-  border-radius: 49px;
+  border-radius: 52px;
   overflow: hidden;
   background: #000;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .carousel-container{
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
 }
 
 .carousel-slide{
@@ -217,7 +210,6 @@ h1{
   width: 100%;
   height: 100%;
   transform: translateX(100%);
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
   display: flex;
   align-items: center;
@@ -225,33 +217,41 @@ h1{
   overflow: hidden;
 }
 
-.carousel-slide.active{
-  transform: translateX(0);
-  z-index: 2;
-}
-
-.carousel-slide.prev{
-  transform: translateX(-100%);
-  z-index: 0;
-}
-
 .carousel-slide img{
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   display: block;
-  max-width: 100%;
-  max-height: 100%;
 }
 
-/* Swipe animation keyframes */
+/* Swipe animation keyframes - current slides left, next comes from right */
 @keyframes carouselSwipe {
-  0% { transform: translateX(100%); }
-  18% { transform: translateX(0); }
-  20% { transform: translateX(0); }
-  38% { transform: translateX(-100%); }
-  100% { transform: translateX(-100%); }
+  0% { 
+    transform: translateX(100%); 
+    z-index: 1;
+    opacity: 0;
+  }
+  1% { 
+    transform: translateX(0); 
+    z-index: 2;
+    opacity: 1;
+  }
+  19% { 
+    transform: translateX(0); 
+    z-index: 2;
+    opacity: 1;
+  }
+  20% { 
+    transform: translateX(-100%); 
+    z-index: 1;
+    opacity: 0;
+  }
+  100% { 
+    transform: translateX(-100%); 
+    z-index: 1;
+    opacity: 0;
+  }
 }
 
 .carousel-slide:nth-child(1) {
@@ -481,6 +481,9 @@ h1{
   }
   .hero-card{
     max-width: 320px;
+  }
+  .phone-screen{
+    border-radius: 43px;
   }
 }
 

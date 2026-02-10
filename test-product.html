@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Product Page - Stylit Widget</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #f5f5f5;
+    }
+    
+    .product-container {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .product-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .product-image {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #e0e0e0;
+    }
+    
+    .product-info h1 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+    
+    .product-price {
+      font-size: 24px;
+      font-weight: 600;
+      color: #8b5cf6;
+      margin-bottom: 24px;
+    }
+    
+    .size-selector {
+      margin: 24px 0;
+    }
+    
+    .size-selector label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .size-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    
+    .size-btn {
+      padding: 10px 20px;
+      border: 2px solid #ddd;
+      background: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    
+    .size-btn:hover {
+      border-color: #8b5cf6;
+    }
+    
+    .size-btn.selected {
+      background: #8b5cf6;
+      color: white;
+      border-color: #8b5cf6;
+    }
+    
+    .add-to-cart {
+      width: 100%;
+      padding: 16px;
+      background: #8b5cf6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 24px;
+    }
+    
+    .add-to-cart:hover {
+      background: #7c3aed;
+    }
+    
+    .size-chart {
+      margin: 40px 0;
+      padding: 24px;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+    
+    .size-chart h2 {
+      margin-bottom: 16px;
+    }
+    
+    .size-chart table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .size-chart th,
+    .size-chart td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .size-chart th {
+      background: #f0f0f0;
+      font-weight: 600;
+    }
+    
+    .widget-section {
+      margin: 40px 0;
+      padding: 24px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border: 2px dashed #8b5cf6;
+    }
+    
+    .widget-section h2 {
+      margin-bottom: 16px;
+      color: #8b5cf6;
+    }
+  </style>
+</head>
+<body>
+  <div class="product-container">
+    <div class="product-header">
+      <img src="https://via.placeholder.com/600x800/8b5cf6/ffffff?text=Burgundy+Midi+Dress" alt="Product" class="product-image" />
+      
+      <div class="product-info">
+        <h1>Burgundy Midi Dress</h1>
+        <div class="product-price">$89.00</div>
+        
+        <div class="size-selector">
+          <label>Size</label>
+          <div class="size-buttons">
+            <button class="size-btn">XS</button>
+            <button class="size-btn">S</button>
+            <button class="size-btn selected">M</button>
+            <button class="size-btn">L</button>
+            <button class="size-btn">XL</button>
+          </div>
+        </div>
+        
+        <button class="add-to-cart">Add to Cart</button>
+        
+        <div class="widget-section">
+          <h2>✨ Stylit Widget (Test)</h2>
+          <p style="margin-bottom: 16px; color: #666;">Click the button below to test the Stylit fit & color analysis widget:</p>
+          
+          <!-- STYLIT WIDGET WILL BE INJECTED HERE -->
+          <div id="stylit-widget-container"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="size-chart">
+      <h2>Size Guide</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Chest (inches)</th>
+            <th>Waist (inches)</th>
+            <th>Hips (inches)</th>
+            <th>Length (inches)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>S</td>
+            <td>36</td>
+            <td>28</td>
+            <td>38</td>
+            <td>40</td>
+          </tr>
+          <tr>
+            <td>M</td>
+            <td>38</td>
+            <td>30</td>
+            <td>40</td>
+            <td>41</td>
+          </tr>
+          <tr>
+            <td>L</td>
+            <td>40</td>
+            <td>32</td>
+            <td>42</td>
+            <td>42</td>
+          </tr>
+          <tr>
+            <td>XL</td>
+            <td>42</td>
+            <td>34</td>
+            <td>44</td>
+            <td>43</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div style="margin-top: 40px; padding: 24px; background: #fff3cd; border-radius: 8px;">
+      <h3 style="margin-bottom: 12px;">Product Description</h3>
+      <p style="line-height: 1.6; color: #666;">
+        This elegant burgundy midi dress features a flattering A-line silhouette. Made from stretch fabric for comfort. 
+        Perfect for autumn and winter seasons. The dress has a regular fit with a comfortable stretch waistband.
+      </p>
+    </div>
+  </div>
+  
+  <!-- Load Stylit Widget -->
+  <!-- Replace YOUR_API_KEY with actual API key for testing -->
+  <script src="embed.js" data-api-key="test-api-key-123"></script>
+  
+  <!-- Also load widget files directly for local testing -->
+  <link rel="stylesheet" href="widget.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="widget.js"></script>
+</body>
+</html>

@@ -65,6 +65,20 @@ a{ color:inherit; text-decoration:none; }
   border-color: rgba(255,255,255,0.18);
 }
 
+.brands-link{
+  background: var(--primary-gradient);
+  border-color: var(--primary);
+  color: rgba(255,255,255,0.95);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.4);
+}
+
+.brands-link:hover{
+  background: var(--primary-gradient);
+  border-color: var(--primary-dark);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.5);
+  transform: translateY(-1px);
+}
+
 .hero{ position:relative; overflow:hidden; padding: 72px 20px 40px; }
 .bg{ position:absolute; inset:0; pointer-events:none; }
 .orb{
@@ -169,41 +183,23 @@ h1{
   padding: 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
-  max-width: 390px;
+  max-width: 500px;
   margin: 0 auto;
+  flex-direction: column;
 }
 
-.phone-frame{
-  position: relative;
-  width: 390px;
-  max-width: 100%;
-  height: 650px;
-  max-height: 70vh;
-  background: #1a1a1a;
-  border-radius: 55px;
-  padding: 3px;
-  box-shadow: 
-    0 0 0 1px rgba(255,255,255,0.1),
-    0 30px 80px rgba(0,0,0,0.9);
-  flex-shrink: 0;
-}
-
-.phone-screen{
-  width: 100%;
-  height: 100%;
-  border-radius: 52px;
-  overflow: hidden;
-  background: #000;
-  position: relative;
-}
 .app-video{
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 500px;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
   object-position: center;
   display: block;
+  border-radius: var(--r);
+  margin: 0 auto;
 }
 .mock-img{
   height: 180px;
@@ -464,16 +460,12 @@ h1{
   .cta-row .btn{ width: 100%; }
   .trust{ flex-direction: column; }
   .footer-inner{ flex-direction: column; text-align: center; }
-  .phone-frame{
-    width: 320px;
-    height: 533px;
-    margin: 0 auto;
-  }
   .hero-card{
-    max-width: 320px;
+    max-width: 100%;
   }
-  .phone-screen{
-    border-radius: 43px;
+  .app-video{
+    max-width: 100%;
+    max-height: 60vh;
   }
   .steps{
     grid-template-columns: 1fr;
@@ -521,6 +513,27 @@ h1{
   max-height: 500px;
   object-fit: contain;
   display: block;
+}
+
+.hero-card-note{
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.mini-points{
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mini-point{
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
 }
 
 .active-link{

@@ -79,6 +79,20 @@ a{ color:inherit; text-decoration:none; }
   transform: translateY(-1px);
 }
 
+.download-link{
+  background: var(--primary-gradient);
+  border-color: var(--primary);
+  color: rgba(255,255,255,0.95);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.4);
+}
+
+.download-link:hover{
+  background: var(--primary-gradient);
+  border-color: var(--primary-dark);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.5);
+  transform: translateY(-1px);
+}
+
 .hero{ position:relative; overflow:hidden; padding: 72px 20px 40px; }
 .bg{ position:absolute; inset:0; pointer-events:none; }
 .orb{
